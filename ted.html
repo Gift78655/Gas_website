@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>THIS IS A TEST – IF YOU SEE THIS, IT WORKEDd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="pretoriaGas – Reliable home cooking LPG gas delivery in Pretoria. Order 3kg, 5kg or 9kg gas via WhatsApp." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       GLOBAL DESIGN TOKENS
+    =============================== */
+    :root {
+      --primary: #f97316;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --muted: #64748b;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    h1, h2, h3 {
+      font-family: Poppins, sans-serif;
+      margin-top: 0;
+    }
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .divider {
+      text-align: center;
+      color: var(--muted);
+      margin: 80px 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--dark);
+      border: 2px solid var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
+
+    @media(min-width: 768px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Sticky WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #22c55e;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: var(--shadow);
+    }
+
+/* ===============================
+   HERO SECTION – ENHANCED (PRO)
+================================ */
+
+.hero {
+  min-height: 72vh;
+  padding: 70px 20px 75px;
+  position: relative;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.45) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    ),
+    url("./images/Cost-effective-Gas-Rates-for-WA-Residents.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Laptop refinement */
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 68vh;
+  }
+}
+
+/* --------------------------------
+   HERO TEXT & HIERARCHY
+-------------------------------- */
+
+.hero h1 {
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+}
+
+.hero-content {
+  color: rgba(248, 250, 252, 0.96);
+  animation: heroFadeUp 0.8s ease-out both;
+}
+
+.hero-subtext {
+  color: rgba(248, 250, 252, 0.88);
+  max-width: 620px;
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.hero-urgency {
+  color: rgba(248, 250, 252, 0.75);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Highlight */
+.hero .highlight {
+  color: #fb923c;
+}
+
+.hero-content h1 {
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.65);
+}
+
+/* --------------------------------
+   TRUST BADGES (COPY IMPROVED)
+-------------------------------- */
+
+.hero-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.hero-badges span {
+  background: rgba(255, 255, 255, 0.94);
+  color: #0f172a;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* --------------------------------
+   DELIVERY PROMISE
+-------------------------------- */
+
+.delivery-promise {
+  display: inline-block;
+  background: rgba(34, 197, 94, 0.22);
+  color: #dcfce7;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+/* Local trust line */
+.hero-local {
+  font-size: 0.85rem;
+  color: rgba(248,250,252,0.7);
+  margin-bottom: 22px;
+}
+
+/* --------------------------------
+   CTA BUTTON POLISH
+-------------------------------- */
+
+.btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+}
+
+/* --------------------------------
+   RIGHT SIDE CARD (SUPPORTING ROLE)
+-------------------------------- */
+
+.hero-visual {
+  background: white;
+  border-radius: 22px;
+  padding: 26px 30px;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+  max-width: 420px;
+  margin-left: auto;
+
+  /* Change #1: de-emphasise */
+  transform: translateY(10px);
+  opacity: 0.95;
+}
+
+.hero-visual h3 {
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.hero-visual-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* --------------------------------
+   ENTRANCE ANIMATION
+-------------------------------- */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------
+   MOBILE CTA
+-------------------------------- */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-actions .btn.primary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+/* ===============================
+   HOW IT WORKS – PRODUCTION (ADVANCED)
+================================ */
+
+/* Section wrapper */
+.how-it-works {
+  padding: 80px 20px 70px;
+}
+
+/* ===============================
+   SCROLL REVEAL
+================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ===============================
+   HEADER
+================================ */
+
+.how-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 52px;
+}
+
+.how-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.how-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   FLOW + CONNECTOR DOTS (DESKTOP)
+================================ */
+
+.how-flow {
+  position: relative;
+  display: grid;
+  gap: 32px;
+  margin-top: 52px;
+}
+
+@media (min-width: 900px) {
+  .how-flow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Animated dotted connector */
+  .how-flow::after {
+    content: "";
+    position: absolute;
+    top: 54px;
+    left: 14%;
+    right: 14%;
+    height: 4px;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(249,115,22,0.55) 0 6px,
+      transparent 6px 18px
+    );
+    opacity: 0.4;
+    z-index: 0;
+    animation: dotFlow 1.1s ease-out both;
+  }
+}
+
+@keyframes dotFlow {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+/* ===============================
+   CARDS
+================================ */
+
+.how-card {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 38px 34px 40px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.how-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 65px rgba(0,0,0,0.14);
+}
+
+/* Step number */
+.how-step {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.15);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   PRIMARY STEP – WHATSAPP
+================================ */
+
+.how-card.is-primary {
+  border: 2px solid rgba(249,115,22,0.55);
+  background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
+  transform: translateY(-10px);
+  box-shadow: 0 38px 90px rgba(249,115,22,0.25);
+}
+
+/* Glow */
+.how-card.is-primary::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 28px;
+  background: radial-gradient(circle, rgba(249,115,22,0.2), transparent 70%);
+  z-index: -1;
+}
+
+/* ===============================
+   TRUST BADGES (STEP 2)
+================================ */
+
+.step-trust {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.step-trust span {
+  background: rgba(249,115,22,0.12);
+  color: var(--primary);
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ===============================
+   INLINE CTA + TOOLTIP
+================================ */
+
+.how-inline-cta {
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.how-inline-cta:hover {
+  text-decoration: underline;
+}
+
+.why-whatsapp {
+  position: relative;
+  margin-left: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  cursor: help;
+}
+
+.why-whatsapp .tooltip {
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.why-whatsapp:hover .tooltip {
+  opacity: 1;
+}
+
+/* ===============================
+   FOOTER CTA
+================================ */
+
+.how-footer {
+  margin-top: 44px;
+  text-align: center;
+}
+
+.how-footer p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+
+@media (max-width: 768px) {
+  .how-flow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .how-flow::after {
+    display: none;
+  }
+
+  .how-card.is-primary {
+    transform: none;
+  }
+
+  .how-inline-cta {
+    display: block;
+  }
+}
+
+/* ===============================
+   PRICING SECTION
+================================ */
+
+.pricing {
+  padding: 90px 20px;
+}
+
+.pricing-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 60px;
+}
+
+.pricing-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.pricing-grid {
+  display: grid;
+  gap: 32px;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===============================
+   CARDS
+================================ */
+
+.price-card {
+  background: white;
+  border-radius: 26px;
+  padding: 40px 32px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 65px rgba(0,0,0,0.14);
+}
+
+.price-desc {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   FEATURES
+================================ */
+
+.price-features {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 26px;
+}
+
+.price-features li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+/* ===============================
+   TRUST STRIP (NEW)
+================================ */
+
+.price-trust {
+  margin: 18px 0 22px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===============================
+   CTA (HEATMAP FRIENDLY)
+================================ */
+
+.price-card .btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border-radius: 999px;
+}
+
+/* ===============================
+   POPULAR CARD (9KG)
+================================ */
+
+.price-card.is-popular {
+  border: 2px solid rgba(249,115,22,0.55);
+  box-shadow: 0 35px 85px rgba(249,115,22,0.25);
+  transform: translateY(-10px);
+}
+
+.price-card.is-popular:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 100px rgba(249,115,22,0.3);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  font-size: 0.7rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Decision hint under CTA */
+.price-hint {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===============================
+   FROM HOW IT WORKS – ATTENTION HOOK
+================================ */
+
+.pricing.from-how-it-works .price-card {
+  animation: pricePulse 0.6s ease-out both;
+}
+
+.pricing.from-how-it-works .price-card.is-popular {
+  animation: priceFocus 0.9s ease-out both;
+}
+
+@keyframes pricePulse {
+  from {
+    transform: scale(0.96);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes priceFocus {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 rgba(249,115,22,0);
+  }
+  60% {
+    transform: scale(1.03);
+    box-shadow: 0 25px 80px rgba(249,115,22,0.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===============================
+   MOBILE POLISH
+================================ */
+
+@media (max-width: 600px) {
+  .price-card {
+    padding: 34px 28px;
+  }
+
+  .price-card.is-popular {
+    transform: none;
+  }
+}
+
+/* ===============================
+   WHY CHOOSE US
+================================ */
+
+.why-choose-us {
+  padding: 90px 20px;
+}
+
+/* Header */
+.why-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+
+.why-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.why-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.why-grid {
+  display: grid;
+  gap: 32px;
+}
+
+/* Desktop */
+@media (min-width: 1100px) {
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Cards */
+.why-card {
+  background: white;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Reveal support */
+.why-card.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.why-card.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 65px rgba(0,0,0,0.14);
+}
+
+/* Icon */
+.why-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.15);
+  color: var(--primary);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.why-card h3 {
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .why-card {
+    padding: 32px 24px;
+  }
+}
+
+/* ===============================
+   TRUST STRIP
+================================ */
+
+.trust-strip {
+  padding: 32px 20px;
+  background: rgba(249,115,22,0.06);
+}
+
+.trust-strip-list {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.trust-strip-list li {
+  white-space: nowrap;
+}
+
+/* ===============================
+   TESTIMONIAL
+================================ */
+
+.testimonial {
+  padding: 80px 20px 70px;
+}
+
+.testimonial-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  padding: 44px 38px;
+  border-radius: 26px;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+}
+
+/* Quote mark */
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: rgba(249,115,22,0.2);
+  font-family: serif;
+}
+
+.testimonial-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+.testimonial-card footer {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.testimonial-card footer strong {
+  display: block;
+  color: var(--dark);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .testimonial-card {
+    padding: 36px 26px;
+  }
+}
+
+/* ===============================
+   DELIVERY STAT
+================================ */
+.delivery-stat {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.delivery-stat strong {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+}
+
+.delivery-stat span {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ===============================
+   TESTIMONIALS
+================================ */
+.testimonial-wrapper {
+  position: relative;
+}
+
+.testimonial-card {
+  display: none;
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  padding: 44px 38px;
+  border-radius: 26px;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.testimonial-card.active {
+  display: block;
+}
+
+.testimonial-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto 18px;
+}
+
+.testimonial-rating {
+  color: #f59e0b;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.verified-badge {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* ===============================
+   FLOATING WHATSAPP
+================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 40px rgba(37,211,102,0.5);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+.whatsapp-float.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===============================
+   SAFETY & COMPLIANCE
+================================ */
+
+.safety-compliance {
+  padding: 90px 20px 80px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(249,115,22,0.05) 100%
+  );
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.safety-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+
+.safety-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.safety-header h2 {
+  margin-bottom: 12px;
+}
+
+.safety-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   SAFETY GRID
+================================ */
+
+.safety-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .safety-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===============================
+   SAFETY CARDS
+================================ */
+
+.safety-card {
+  background: white;
+  border-radius: 24px;
+  padding: 38px 32px;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.safety-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+}
+
+/* Icon */
+.safety-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.15);
+  color: var(--primary);
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.safety-card h3 {
+  margin-bottom: 10px;
+}
+
+.safety-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===============================
+   SAFETY ACTIONS
+================================ */
+
+.safety-actions {
+  margin-top: 52px;
+  text-align: center;
+}
+
+/* Download link */
+.safety-download {
+  display: inline-block;
+  margin-bottom: 26px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.safety-download:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   ACCORDION
+================================ */
+
+.safety-accordion {
+  max-width: 520px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.safety-accordion summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--dark);
+  list-style: none;
+  position: relative;
+  padding-right: 22px;
+}
+
+.safety-accordion summary::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.25s ease;
+}
+
+.safety-accordion[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.safety-accordion ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ===============================
+   DISCLAIMER TOOLTIP
+================================ */
+
+.safety-disclaimer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.15);
+  color: var(--primary);
+}
+
+.safety-disclaimer:focus {
+  outline: 2px solid rgba(249,115,22,0.4);
+  outline-offset: 2px;
+}
+
+.safety-disclaimer .tooltip {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  width: 230px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.safety-disclaimer .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+}
+
+.safety-disclaimer:hover .tooltip,
+.safety-disclaimer:focus .tooltip {
+  opacity: 1;
+}
+
+/* ===============================
+   COMPLIANCE BADGES
+================================ */
+
+.compliance-logos {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.compliance-logos span {
+  background: rgba(249,115,22,0.12);
+  color: var(--dark);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+
+@media (max-width: 600px) {
+  .safety-card {
+    padding: 32px 26px;
+  }
+
+  .safety-accordion {
+    padding: 18px 20px;
+  }
+}
+
+/* ===============================
+   DELIVERY AREA
+================================ */
+
+.delivery-area {
+  padding: 90px 20px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(249,115,22,0.04) 100%
+  );
+}
+
+.delivery-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+
+.delivery-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.delivery-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Zones layout */
+.delivery-zones {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+@media (min-width: 768px) {
+  .delivery-zones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Zone cards */
+.zone-card {
+  background: white;
+  border-radius: 26px;
+  padding: 36px 32px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+.zone-card h3 {
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.zone-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.zone-card li {
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+/* CTA */
+.delivery-cta {
+  text-align: center;
+}
+
+.delivery-cta p {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.btn.disabled {
+  background: #cbd5e1;
+  color: #475569;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===============================
+   ZONE BADGES
+================================ */
+
+.zone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.zone-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.zone-badge.primary {
+  background: rgba(34,197,94,0.15);
+  color: #16a34a;
+}
+
+.zone-badge.limited {
+  background: rgba(249,115,22,0.15);
+  color: var(--primary);
+}
+
+/* ===============================
+   MAP-STYLE VISUAL (NO MAPS)
+================================ */
+
+.coverage-map {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 36px 0 48px;
+  flex-wrap: wrap;
+}
+
+.map-zone {
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: #f8fafc;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.map-zone.primary {
+  border-left: 4px solid #22c55e;
+}
+
+.map-zone.limited {
+  border-left: 4px solid var(--primary);
+}
+
+/* ===============================
+   CENTRAL DELIVERY NOTE
+================================ */
+
+.zone-note {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* ===============================
+   DRIVER SAFETY DISCLAIMER
+================================ */
+
+.delivery-disclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 34px;
+}
+
+/* ===============================
+   ORDER NOW CTA
+================================ */
+
+.order-now {
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.order-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fb923c;
+  font-weight: 700;
+}
+
+.order-now h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 14px;
+}
+
+.order-subtext {
+  max-width: 620px;
+  margin: 0 auto 26px;
+  font-size: 1.05rem;
+  color: #cbd5f5;
+}
+
+.order-trust {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  margin-bottom: 34px;
+  color: #e5e7eb;
+}
+
+.order-trust span {
+  background: rgba(255,255,255,0.08);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.order-now .btn.large {
+  padding: 16px 34px;
+  font-size: 1.05rem;
+}
+
+.order-hours {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+
+/* ------------------------------- */
+
+  </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     SECTION 1: HERO (IMAGE BACKGROUND – ENHANCED)
+===================================================== -->
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <!-- LEFT: CONTENT -->
+    <div class="hero-content">
+
+      <!-- Trust Badges -->
+      <div class="hero-badges">
+        <span>Trusted by Local Homes</span>
+        <span>Safety Certified LPG</span>
+        <span>Fast Local Delivery</span>
+      </div>
+
+      <h1>
+        Reliable Home Cooking Gas<br>
+        <span class="highlight">Delivered Fast in Pretoria</span>
+      </h1>
+
+      <p class="hero-subtext">
+        Safe, certified LPG cylinders • Same-day delivery • Easy WhatsApp ordering
+      </p>
+
+      <!-- Delivery Promise -->
+      <div class="delivery-promise">
+        Same-day delivery available in Pretoria
+      </div>
+
+      <!-- Local Trust -->
+      <p class="hero-local">
+        Serving Pretoria East, North & CBD
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-actions">
+        <a class="btn primary" href="#order">
+          Order on WhatsApp Now
+        </a>
+        <a class="btn secondary" href="#prices">
+          View Prices
+        </a>
+      </div>
+
+      <!-- Urgency -->
+      <p class="hero-urgency">
+        Orders placed before 4pm qualify for same-day delivery
+      </p>
+
+    </div>
+
+    <!-- RIGHT: SUPPORTING CARD -->
+    <div class="hero-visual">
+      <h3>Home Cooking LPG</h3>
+      <p class="hero-visual-sub">
+        3kg • 5kg • 9kg Cylinders
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">— HOW IT WORKS —</div>
+
+
+<!-- =====================================================
+     SECTION: HOW IT WORKS (FULLY ENHANCED)
+===================================================== -->
+<section class="how-it-works reveal" aria-labelledby="how-it-works-title">
+
+  <div class="container">
+
+    <header class="how-header reveal reveal-delay-1">
+      <span class="how-eyebrow">How it works</span>
+      <h2 id="how-it-works-title">Gas Delivered in 3 Simple Steps</h2>
+      <p>No paperwork. No waiting in queues. Just gas, delivered.</p>
+    </header>
+
+    <div class="how-flow" role="list">
+
+      <article class="how-card reveal reveal-delay-1" role="listitem">
+        <div class="how-step">1</div>
+        <h3>Choose Your Gas</h3>
+        <p>Select 3kg, 5kg or 9kg LPG based on your household cooking needs.</p>
+      </article>
+
+      <article class="how-card is-primary reveal reveal-delay-2" role="listitem">
+        <div class="how-step">2</div>
+        <h3>Order on WhatsApp</h3>
+        <p>Send us a quick message. No apps, no forms, no registration required.</p>
+
+        <div class="step-trust">
+          <span>Certified LPG</span>
+          <span>Secure Ordering</span>
+          <span>Local Delivery</span>
+        </div>
+
+        <a href="https://wa.me/27676997547" class="how-inline-cta">
+          Start WhatsApp Order →
+        </a>
+
+        <span class="why-whatsapp">
+          Why WhatsApp?
+          <span class="tooltip">
+            Fastest way to confirm stock, delivery time, and location.
+          </span>
+        </span>
+      </article>
+
+      <article class="how-card reveal reveal-delay-3" role="listitem">
+        <div class="how-step">3</div>
+        <h3>Fast Delivery</h3>
+        <p>Same-day or next-day delivery straight to your door in Pretoria.</p>
+      </article>
+
+    </div>
+
+    <footer class="how-footer reveal reveal-delay-3">
+      <p>Most customers receive their gas in <strong>under 2 hours</strong>.</p>
+      <a href="#prices" class="btn primary" data-highlight-pricing>
+        View Prices
+      </a>
+    </footer>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 3: PRODUCTS & PRICES (ENHANCED + REACTIVE)
+===================================================== -->
+<section id="prices" class="pricing reveal">
+
+  <div class="container">
+
+    <!-- Section Intro -->
+    <header class="pricing-header reveal reveal-delay-1">
+      <h2>Choose Your Gas Size</h2>
+      <p>
+        All cylinders are certified, safe, and delivered directly to your home in Pretoria.
+      </p>
+    </header>
+
+    <!-- Pricing Grid -->
+    <div class="pricing-grid">
+
+      <!-- 3kg -->
+      <div class="price-card reveal reveal-delay-1" data-react>
+        <h3>3kg LPG Gas</h3>
+        <p class="price-desc">Ideal for small households and apartments.</p>
+
+        <ul class="price-features">
+          <li>Lightweight & portable</li>
+          <li>Great for light cooking</li>
+          <li>Fast delivery available</li>
+        </ul>
+
+        <!-- Trust micro-line -->
+        <p class="price-trust">✔ Certified • ✔ Safe handling</p>
+
+        <a
+          class="btn price-cta"
+          href="https://wa.me/27676997547?text=Hi%20pretoriaGas,%20I%20want%20to%20order%20a%203kg%20LPG%20gas%20refill"
+        >
+          Order 3kg
+        </a>
+      </div>
+
+      <!-- 5kg -->
+      <div class="price-card reveal reveal-delay-2" data-react>
+        <h3>5kg LPG Gas</h3>
+        <p class="price-desc">Perfect balance for everyday home cooking.</p>
+
+        <ul class="price-features">
+          <li>Popular for small families</li>
+          <li>Longer cooking time</li>
+          <li>Reliable daily use</li>
+        </ul>
+
+        <p class="price-trust">✔ Certified • ✔ Doorstep delivery</p>
+
+        <a
+          class="btn price-cta"
+          href="https://wa.me/27676997547?text=Hi%20pretoriaGas,%20I%20want%20to%20order%20a%205kg%20LPG%20gas%20refill"
+        >
+          Order 5kg
+        </a>
+      </div>
+
+      <!-- 9kg (Most Popular) -->
+      <div class="price-card is-popular reveal reveal-delay-3" data-react>
+        <span class="popular-badge">Most Popular</span>
+
+        <h3>9kg LPG Gas</h3>
+        <p class="price-desc">Best value for families and frequent cooking.</p>
+
+        <ul class="price-features">
+          <li>Longest usage time</li>
+          <li>Best value per refill</li>
+          <li>Top choice in Pretoria</li>
+        </ul>
+
+        <p class="price-trust">✔ Best value • ✔ Same-day delivery</p>
+
+        <a
+          class="btn primary price-cta"
+          href="https://wa.me/27676997547?text=Hi%20pretoriaGas,%20I%20want%20to%20order%20a%209kg%20LPG%20gas%20refill"
+        >
+          Order 9kg
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="divider">— WHY CHOOSE US —</div>
+
+
+<!-- =====================================================
+     SECTION 5: SAFETY & COMPLIANCE (ENHANCED + TRUST)
+===================================================== -->
+<section class="safety-compliance">
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="safety-header">
+      <span class="safety-eyebrow">Safety & Compliance</span>
+      <h2>Your Safety Comes First</h2>
+      <p>
+        We strictly follow South African LPG regulations to ensure every delivery is safe,
+        compliant, and handled with care.
+        <span class="safety-disclaimer" tabindex="0" aria-label="Safety compliance information">
+          ℹ
+          <span class="tooltip">
+            This information is provided for general guidance and does not replace professional
+            installation or inspection requirements.
+          </span>
+        </span>
+      </p>
+    </header>
+
+    <!-- Safety Points -->
+    <div class="safety-grid">
+
+      <div class="safety-card">
+        <div class="safety-icon">✔</div>
+        <h3>Certified Cylinders</h3>
+        <p>
+          All LPG cylinders are approved, inspected, and certified according to
+          South African safety standards.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <div class="safety-icon">🛡️</div>
+        <h3>Safe Handling</h3>
+        <p>
+          Our delivery process follows proper handling procedures to minimise risk
+          during transport and handover.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <div class="safety-icon">📘</div>
+        <h3>Basic Safety Guidance</h3>
+        <p>
+          Customers receive simple guidance on correct usage, storage,
+          and leak awareness for peace of mind.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Safety Actions -->
+    <div class="safety-actions">
+
+      <!-- Download -->
+      <a
+        href="assets/lpg-safety-checklist.pdf"
+        class="safety-download"
+        download
+      >
+        ⬇ Download Safety Checklist (PDF)
+      </a>
+
+      <!-- Subtle divider (micro-improvement) -->
+      <div style="
+        width:60px;
+        height:3px;
+        background:rgba(249,115,22,0.3);
+        margin:0 auto 24px;
+        border-radius:3px;
+      "></div>
+
+      <!-- Accordion -->
+      <details class="safety-accordion">
+        <summary>How to detect a gas leak</summary>
+        <ul>
+          <li>Smell for a strong gas odour near the cylinder or stove</li>
+          <li>Listen for hissing sounds around valves or connections</li>
+          <li>Apply soapy water to connections and check for bubbles</li>
+          <li>If unsure, turn off the gas and contact us immediately</li>
+        </ul>
+      </details>
+
+      <!-- Calm emergency micro-note -->
+      <p style="
+        margin-top:14px;
+        font-size:0.8rem;
+        color:var(--muted);
+      ">
+        If you notice a strong gas smell, ventilate the area and contact us for assistance.
+      </p>
+
+    </div>
+
+    <!-- Compliance Logos -->
+    <div class="compliance-logos">
+      <span>SA LPG Compliant</span>
+      <span>Certified Cylinders</span>
+      <span>Licensed Suppliers</span>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="divider">— DELIVERY AREA —</div>
+
+
+
+
+<!-- =====================================================
+     SECTION 6: DELIVERY AREA (PRIMARY SERVICE)
+===================================================== -->
+<section class="delivery-area">
+
+  <div class="container">
+
+    <header class="delivery-header">
+      <span class="delivery-eyebrow">Delivery Area</span>
+      <h2>Where We Deliver</h2>
+      <p>
+        We currently deliver to selected, verified areas in
+        <strong>Pretoria West</strong>, <strong>Pretoria Central</strong>,
+        and <strong>Centurion</strong>.
+        All deliveries are confirmed on WhatsApp before dispatch.
+      </p>
+    </header>
+
+    <div class="delivery-zones">
+
+      <!-- Pretoria West -->
+      <div class="zone-card">
+        <h3>Pretoria West</h3>
+        <ul>
+          <li>Pretoria West</li>
+          <li>Daspoort</li>
+          <li>Claremont</li>
+          <li>Lotus Gardens</li>
+          <li>West Park</li>
+          <li>Danville</li>
+          <li>Hercules</li>
+          <li>Proclamation Hill</li>
+          <li>Philip Nel Park</li>
+          <li>Kwaggasrand</li>
+          <li>Elandspoort</li>
+        </ul>
+      </div>
+
+      <!-- Pretoria Central -->
+      <div class="zone-card">
+        <h3>Pretoria Central</h3>
+        <ul>
+          <li>Pretoria CBD</li>
+          <li>Arcadia</li>
+          <li>Sunnyside</li>
+          <li>Sunnyside East</li>
+          <li>Muckleneuk</li>
+          <li>Muckleneuk Ridge</li>
+          <li>Hatfield</li>
+          <li>Hatfield Gardens</li>
+          <li>Brooklyn (selected areas)</li>
+        </ul>
+      </div>
+
+      <!-- Centurion -->
+      <div class="zone-card">
+        <h3>Centurion</h3>
+        <ul>
+          <li>Centurion Central</li>
+          <li>Zwartkop</li>
+          <li>Clubview</li>
+          <li>Die Hoewes</li>
+          <li>Lyttelton</li>
+          <li>Lyttelton Manor</li>
+          <li>Eldoraigne</li>
+          <li>Valhalla</li>
+          <li>Raslouw</li>
+          <li>Hennopspark</li>
+          <li>Pierre van Ryneveld</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="delivery-cta">
+      <p>
+        📍 Not sure if we deliver to your location?
+        Send your area on WhatsApp and we’ll confirm instantly.
+      </p>
+
+      <!-- SMART WHATSAPP MESSAGE -->
+      <a
+        href="https://wa.me/27676997547?text=Hi%20pretoriaGas,%20I%20would%20like%20to%20confirm%20delivery%20to%20my%20area.%0A%0A📍%20Area:%20%0A🏠%20Suburb:%20%0A⏰%20Preferred%20delivery%20time:%20"
+        class="btn primary"
+      >
+        Check My Area on WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="divider">— ORDER NOW —</div>
+
+
+
+
+<!-- =====================================================
+     SECTION 7: ORDER NOW (HIGH-CONVERSION CTA)
+===================================================== -->
+<section id="order" class="order-now">
+
+  <div class="container">
+
+    <span class="order-eyebrow">Ready to Order?</span>
+
+    <h2>Get Your LPG Gas Delivered Today</h2>
+
+    <p class="order-subtext">
+      Fast, safe, and verified LPG gas delivery in
+      <strong>Pretoria West</strong>, <strong>Pretoria Central</strong>,
+      and <strong>Centurion</strong>.
+    </p>
+
+    <!-- Trust Microcopy -->
+    <div class="order-trust">
+      <span>✔ Certified Cylinders</span>
+      <span>✔ Local Delivery</span>
+      <span>✔ WhatsApp Ordering</span>
+    </div>
+
+    <!-- CTA -->
+    <a
+      href="https://wa.me/27676997547?text=Hi%20pretoriaGas,%20I%20would%20like%20to%20place%20an%20order.%0A%0A📍%20Area:%20%0A🏠%20Suburb:%20%0A⏰%20Preferred%20delivery%20time:%20"
+      class="btn primary large"
+    >
+      Order on WhatsApp
+    </a>
+
+    <!-- Delivery Hours -->
+    <p class="order-hours">
+      ⏰ Delivery hours: <strong>08:00 – 18:00</strong> (Daytime only)
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 8: FOOTER
+===================================================== -->
+<footer style="padding:40px 20px;text-align:center;color:var(--muted);">
+  © 2025 pretoriaGas · LPG Home Cooking Gas Delivery · Pretoria
+</footer>
+
+<!-- Sticky WhatsApp Button -->
+<a class="whatsapp-float" href="https://wa.me/27676997547">
+  WhatsApp Order
+</a>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<!-- HOW IT WORKS → PRICING REACTION -->
+  <script>
+    document
+      .querySelector('[data-highlight-pricing]')
+      ?.addEventListener('click', () => {
+        document
+          .getElementById('prices')
+          ?.classList.add('from-how-it-works');
+      });
+  </script>
+
+<script>
+/* ===============================
+   DELIVERY COUNTER
+================================ */
+const counter = document.getElementById('delivery-count');
+let count = 0;
+const target = 500;
+
+const counterObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    const interval = setInterval(() => {
+      count += 10;
+      counter.textContent = count + '+';
+      if (count >= target) {
+        counter.textContent = '500+';
+        clearInterval(interval);
+      }
+    }, 30);
+    counterObserver.disconnect();
+  }
+}, { threshold: 0.4 });
+
+counterObserver.observe(counter);
+
+/* ===============================
+   ROTATING TESTIMONIALS
+================================ */
+const testimonials = document.querySelectorAll('.testimonial-card');
+let current = 0;
+
+setInterval(() => {
+  testimonials[current].classList.remove('active');
+  current = (current + 1) % testimonials.length;
+  testimonials[current].classList.add('active');
+}, 5000);
+
+/* ===============================
+   WHATSAPP FLOAT REACT
+================================ */
+const whatsappBubble = document.querySelector('.whatsapp-float');
+const testimonialSection = document.getElementById('testimonial');
+
+const bubbleObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    whatsappBubble.classList.add('active');
+  }
+}, { threshold: 0.3 });
+
+bubbleObserver.observe(testimonialSection);
+</script>
+
+
+<script>
+  (function () {
+    const now = new Date();
+    const hour = now.getHours();
+
+    // DELIVERY WINDOW: 08:00 – 18:00
+    const isDeliveryTime = hour >= 8 && hour < 18;
+    const deliveryBtn = document.querySelector('.delivery-cta .btn');
+
+    if (!isDeliveryTime && deliveryBtn) {
+      deliveryBtn.textContent = 'Delivery Hours: 08:00 – 18:00';
+      deliveryBtn.classList.add('disabled');
+      deliveryBtn.removeAttribute('href');
+
+      const notice = document.createElement('p');
+      notice.textContent =
+        '🚫 Orders are accepted during daytime delivery hours only for safety reasons.';
+      notice.style.marginTop = '12px';
+      notice.style.fontSize = '0.85rem';
+      notice.style.color = '#64748b';
+
+      deliveryBtn.parentElement.appendChild(notice);
+    }
+  })();
+</script>
+
+<script>
+  (function () {
+    const hour = new Date().getHours();
+    const centralZone = document.querySelector('.limited-zone .zone-note');
+
+    if (hour < 8 || hour >= 18) {
+      if (centralZone) {
+        centralZone.textContent =
+          '⏰ Pretoria Central deliveries are confirmed during daytime hours only.';
+      }
+    }
+  })();
+</script>
+
+
+</body>
+</html>
+
